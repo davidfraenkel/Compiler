@@ -1,0 +1,16 @@
+FIND_MAX_CROSSING_SUBARRAY(A, _low, mid, _high)
+    left_sum = -∞
+    sum = 0
+    for i = mid downto _low
+        sum = sum + A[i]
+        if sum > left_sum
+            left_sum = sum
+            max_left = i
+    right_sum = -∞
+    sum = 0
+    for j = mid + 1 to _high 
+        sum = sum + A[j]
+        if sum > right_sum
+            right_sum = sum
+            max_right = j
+    return (max_left, max_right, left_sum + right_sum)

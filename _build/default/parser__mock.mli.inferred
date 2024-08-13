@@ -1,0 +1,92 @@
+type token =
+    WITH
+  | WHILE
+  | UNION
+  | TO
+  | TIMES
+  | TABLE
+  | SWAP
+  | STRING of string
+  | SORT
+  | RPAREN
+  | ROWS
+  | ROOTLIST
+  | RETURN
+  | RBRACKET
+  | RBRACE
+  | RANDOM
+  | PRINT
+  | POWER
+  | PLUS
+  | PI
+  | OR
+  | NIL
+  | NEWLINE
+  | NEQ
+  | MONOTONICALLY_DECREASING_ORDER_BY_WEIGHT
+  | MONOTONICALLY_ASCENDING_ORDER_BY_WEIGHT
+  | MOD
+  | MINUS
+  | MATRIX
+  | LTE
+  | LT
+  | LPAREN
+  | LOW
+  | LET
+  | LENGTH
+  | LBRACKET
+  | LBRACE
+  | ITEMS
+  | INTO
+  | INTERSECT
+  | INSERT
+  | INFINITY
+  | IN
+  | IF
+  | IDENT of string
+  | HIGH
+  | GTE
+  | GT
+  | FOR
+  | EXCHANGE
+  | ERROR
+  | EQUAL
+  | EOF
+  | END
+  | EMPTYSET
+  | ELSEIF
+  | ELSE
+  | DOWNTO
+  | DOTDOT
+  | DOT
+  | DIVIDEFLOOR
+  | DIVIDE
+  | CST of Ast.constant
+  | CROSS
+  | COMMA
+  | COLUMNS
+  | BE_A_NEW
+  | BEGIN
+  | ARRAY
+  | AND
+  | ALL
+val silent : bool ref
+val conditionalPrint : string -> unit
+val menhir_begin_marker : int
+val xv_table_list : Ast.expr list
+val xv_suite : Ast.stmt
+val xv_stmt : Ast.stmt
+val xv_simpleStmt : Ast.stmt
+val xv_option_NEWLINE_ : unit option
+val xv_objectConstant : Ast.objectConstant
+val xv_nonempty_list_stmt_ : Ast.stmt list
+val xv_mathOperator : Ast.binop
+val xv_initTable : Ast.expr
+val xv_initArray : Ast.expr
+val xv_ident : Ast.ident
+val xv_file : Ast.stmt
+val xv_exprList : Ast.expr list
+val xv_expr : Ast.expr
+val xv_eDotnotation : Ast.expr
+val xv_arrayList : Ast.expr list
+val menhir_end_marker : int

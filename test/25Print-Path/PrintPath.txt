@@ -1,0 +1,8 @@
+PRINT_PATH(G,s,v)
+    if v == S
+        print s
+    elseif v.π == NIL
+        print "no path from" s "to" v "exists"
+    else 
+        PRINT_PATH(G,s,v.π)
+        print v

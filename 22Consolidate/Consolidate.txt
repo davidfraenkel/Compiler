@@ -1,0 +1,22 @@
+Consolidate(H)
+    let A[0..D(H.n)] be a new array
+    for i = 0 to D(H.n)
+        A[i] = NIL 
+    for each node w in the root list of H 
+        x = w 
+        d = x.degree
+        while A[d] ≠ NIL
+            y = A[d]
+            if x.key > y.key 
+                exchange x with y
+            Fib_Heap_Link(H,y,x)
+            A[d] = NIL 
+            d = d + 1
+        A[d] = x
+    H.min = NIL 
+    for i = 0 to D(H.n)
+        if A[i] ≠ NIL 
+            create a root list for H containing just A[i]
+            H.min = A[i]
+        else insert A[i].key < H.min.key
+            H.min = A[i]

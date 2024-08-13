@@ -1,0 +1,9 @@
+RECURSIVE_MATRIX_CHAIN(P, i, j, m)
+    if i == j
+        return 0
+    m[i][j] = ∞
+    for k = i to j - 1
+        q = RECURSIVE_MATRIX_CHAIN(P, i, k, m) + RECURSIVE_MATRIX_CHAIN(P, k + 1, j, m) + P[i-1]*P[k]*P[j]
+        if q < m[i][j]
+            m[i][j] = q
+    return m[i][j]

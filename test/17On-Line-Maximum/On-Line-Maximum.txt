@@ -1,0 +1,13 @@
+score(i)
+    n = random(0,100)
+    return n 
+
+ON_LINE_MAXIMUM(k,n)
+    bestscore = -∞
+    for i = 1 to k
+        if score(i) > bestscore
+            bestscore = score(i)
+    for i = k + 1 to n 
+        if score(i) > bestscore
+            return i
+    return n

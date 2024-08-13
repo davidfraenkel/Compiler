@@ -1,0 +1,25 @@
+vEB-TREE-DELETE (V, x)
+    if V.min == V.max
+        V.min = NIL
+        V.max = NIL
+    elseif V.u == 2
+        if x==0
+            V.min = 1
+        else V.min = 0
+            V.max = V.min
+    elseif x == V.min
+        first-cluster = VEB-TrEE-MinImuM (V.summary)
+        x = index (first-cluster, VEB-TREE-MINIMUM (V.cluster [first-cluster]))
+        V.min = x
+        VEB-TREE-DELETE (V. cluster[high(x)], low(x)) 
+        if VEB-TREE-MINIMUM (V.cluster[high(x)]) == NIL 
+            VEB-TREE-DELETE (V. summary, high(x))
+            if x == V.max
+                summary-max = VEB-TREE-MAXIMUM(V. summary)
+                if summary-max == NIL
+                    V.max = V.min
+                else V.max = index(summary-max, 
+                    VEB-TREE-MAXIMUM (V.cluster[summary-max]))
+        elseif x == V.max
+            V.max = index (high(x), 
+                VEB-TREE-MAXIMUM (V. cluster[high (x)]))

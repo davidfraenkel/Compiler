@@ -1,0 +1,14 @@
+vEB_Tree_Insert(V,x)
+    if V.min == NIL
+        vEB_Empty_Tree_Insert(V,x)
+    elseif x < V.min
+        exchange x with V.min
+        if V.u > 2
+            if vEB_Tree_Minimum(V.cluster[high(x)]) == NIL
+                vEB_Tree_Insert(V.summary, high(x))
+                vEB_Empty_Tree_Insert(V.cluster[high(x)], low(x))
+            else 
+                vEB_Tree_Insert(V.cluster[high(x)], low(x))
+        if x > V.max 
+            V.max = x
+            

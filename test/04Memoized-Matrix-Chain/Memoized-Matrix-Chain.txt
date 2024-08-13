@@ -1,0 +1,20 @@
+MEMOIZED_MATRIX_CHAIN(p)
+    n = p.length - 1
+    let m[1..n, 1..n] be a new table
+    for i = 1 to n
+        for j = i to n
+            m[i, j] = ∞
+    return LOOKUP_CHAIN(m, p, 1, n)
+
+
+LOOKUP_CHAIN(m, p, i, j)
+    if m[i, j] < ∞
+        return m[i, j]
+    if i == j
+        m[i, j] = 0
+    else 
+        for k = i to j - 1
+            q = LOOKUP_CHAIN(m, p, i, k) + LOOKUP_CHAIN(m, p, k + 1, j) + p[i-1] * p[k] * p[j]
+            if q < m[i, j]
+                m[i, j] = q
+    return m[i, j]
